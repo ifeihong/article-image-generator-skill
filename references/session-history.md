@@ -10,7 +10,7 @@ The skill automatically saves generation parameters and user preferences to `ass
 
 ```json
 {
-  "version": "1.2",
+  "version": "1.3",
   "last_updated": "2026-06-18T14:30:00Z",
   "sessions": [
     {
@@ -24,9 +24,7 @@ The skill automatically saves generation parameters and user preferences to `ass
       "language": "zh",
       "character_name": "光之搬运工",
       "character_description": "一个由光纤编织而成的人形...",
-      "generation_method": "heterogeneous_synthesis",
-      "user_rating": 5,
-      "tags": ["科技", "半导体", "深度文章"]
+      "generation_method": "heterogeneous_synthesis"
     }
   ],
   "user_defaults": {
@@ -55,7 +53,7 @@ After each successful generation, append to history:
 - Session ID (timestamp-based)
 - All generation parameters
 - User rating (if provided)
-- Article tags (if user provides)
+
 
 ## Reuse Commands
 
@@ -68,19 +66,15 @@ After each successful generation, append to history:
 | "Reuse session 3" / "复用第3次" | Load session by index |
 | "I liked the character from the AI article" / "喜欢上次AI文章的角色" | Search history by article title/tag |
 
-## Quick Mode vs Expert Mode Defaults
+## Default Parameters
 
-**Quick Mode defaults** (stored in `user_defaults.quick`):
+**Default values** (stored in `user_defaults`):
 - Mode: Context Anchor
 - Aspect Ratio: 16:9
 - Quantity: auto-recommended
 - Style: Base Sketch
 - Language: auto-detect
-
-**Expert Mode defaults** (stored in `user_defaults.expert`):
-- All parameters from last expert session
-- Custom style mixing preferences
-- Advanced quality gate settings
+- Expert Mode: false
 
 ## Privacy Note
 

@@ -261,7 +261,7 @@ Lines are broken, duplicated, and offset with digital corruption feel. RGB chann
 | "赛博""霓虹""科技""未来""AI感" | 6. 赛博霓虹 |
 | "木刻""版画""黑白""粗犷""力量" | 7. 木刻版画 |
 | "黏土""3D""可爱""教育""儿童" | 8. 黏土定格 |
-| "故障"" glitch""实验""数字""黑客" | 9. 故障艺术 |
+| "故障" "glitch" "实验" "数字" "黑客" | 9. 故障艺术 |
 
 ---
 

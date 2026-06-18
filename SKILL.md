@@ -18,7 +18,7 @@ Configurable output:
 - **Aspect Ratio**: 16:9 (default), 9:16, 4:3, 3:4, 1:1, 21:9
 - **Quantity**: 1-9 images per article (smart recommendation based on content length)
 - **Language**: Auto-detect from article text, or manually select (Chinese / English / Japanese / Korean)
-- **Workflow Mode**: Quick Mode (1-step) or Expert Mode (full 9-step pipeline)
+- **Workflow Mode**: Quick Mode (1-step) or Expert Mode (full 10-step pipeline, Step 0-9)
 - **Style**: 10 base styles + Hybrid Style mixing experiments
 
 ## Dual Workflow Modes
@@ -43,7 +43,7 @@ User: "Generate illustrations for this article"
 - "Generate with 9:16, Cyber-Neon style, 4 images" → Quick mode with overrides
 
 ### Expert Mode
-Full 9-step pipeline with granular control. Activated when user says:
+Full 10-step pipeline (Step 0-9) with granular control. Activated when user says:
 - "Expert mode" / "专业模式"
 - "I want full control" / "我要完整控制"
 - Or when user explicitly selects parameters one by one
@@ -119,6 +119,7 @@ Read on-demand based on task requirements; do not load everything at once:
 - `references/series-character-continuity.md`: Series character save/reuse workflow
 - `references/onboarding-guide.md`: First-time user guided walkthrough
 - `references/error-handling.md`: Error scenarios and recovery strategies
+- `references/platform-detection.md`: Platform keyword detection rules for Quick Mode auto-ratio
 
 ### Mode-Specific References
 - **Brand Anchor Mode**: `references/character-anchors/brand-anchor.md` — Character locking specification, reference image usage rules, character description template
@@ -199,9 +200,9 @@ Reply with a number. Press Enter for recommended value.
 ```
 
 - Confirm user selection
-- Default: 4-8 images for medium-length articles
+- Default: 4-6 images for medium-length articles
 - Short articles: 1-3 images
-- Long articles: maximum 9 images
+- Long articles: 7-9 images
 - User says "default" / "standard" / "no preference" → Use recommended value
 
 ### Step 5: Style Selection
@@ -233,7 +234,7 @@ Reply with a number (e.g., "3") or style name.
 
 **Style Preview**: Preview images for each style are available in `assets/style-previews/`. When the user asks "show me the styles" / "看看风格效果", display or describe the preview images to help them choose.
 
-### Step 5b: Hybrid Style Mixing (Expert Mode Optional)
+**Hybrid Style Mixing (Optional within Step 5)**
 If user selects [H] Hybrid Mode:
 ```
 Hybrid Style Mode — Select two styles to mix:
@@ -267,7 +268,7 @@ Read the user's article text, links, Markdown, Notion, or screenshots. Extract:
 
 Do not distribute images evenly. Prioritize "cognitive anchors": core judgments, breakpoints, closed loops, divergences, before/after contrasts, continuation paths, character state changes.
 
-### Step 6b: Illustration Strategy Report (Optional, Expert Mode)
+**Illustration Strategy Report (Optional within Step 6)**
 If user says "show strategy first" / "先出策略":
 - Output strategy report using `references/illustration-strategy-report.md`
 - Include: content analysis, visual anchor points, cognitive load map, character strategy, style justification, quantity rationale
@@ -343,7 +344,7 @@ After generation, check against `references/quality-gates.md`. Common issues:
 - **Brand Anchor Mode extra check**: Does character match reference image? Do signature features appear?
 - **Language check**: Are annotations in the correct language? Are they readable?
 
-### Step 10: Save & Deliver
+### Step 9: Save & Deliver
 Save final images to:
 ```text
 assets/<article-slug>-illustrations/

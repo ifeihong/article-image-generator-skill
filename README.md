@@ -169,7 +169,7 @@ Choose your workflow based on time and control needs:
 
 | Aspect | Quick Mode | Expert Mode |
 |--------|-----------|-------------|
-| **Steps** | 1-step auto-detect | Full 9-step pipeline |
+| **Steps** | 1-step auto-detect | Full 10-step pipeline (Step 0-9) |
 | **Best For** | Fast results, familiar users | First-time users, precise control |
 | **Parameters** | All auto-detected | User selects each parameter |
 | **Override** | Inline overrides supported | Full granular control |
@@ -292,37 +292,27 @@ Preview images for all 10 styles are available in `assets/style-previews/`. Say 
 
 ---
 
-### Professional Workflow: 8-Step Standardized Pipeline
+### Professional Workflow: 10-Step Pipeline (Step 0-9)
 
 ```
-Mode Confirmation → Dialect Selection → Content Digestion → Visual Script (Shot List)
-        ↓
-Character Confirmation (Context Mode) → Single Image Generation → Quality Gates → Save & Deliver
+Step 0: Workflow Mode Selection → Step 1: Mode Confirmation → Step 2: Language Selection
+    → Step 3: Aspect Ratio Selection → Step 4: Quantity Confirmation → Step 5: Style Selection
+    → Step 6: Content Digestion → Step 7: Visual Script (Shot List)
+    → Step 8: Single Image Generation → Step 9: Quality Gates → Step 9: Save & Deliver
 ```
 
-**Step 1: Mode Confirmation**
-Checks for reference images in `assets/ip-reference/` and asks your preference.
-
-**Step 2: Dialect Selection**
-Presents the 10-dialect menu; you respond with a number or dialect name.
-
-**Step 3: Content Digestion**
-Analyzes core arguments, cognitive turning points, and which sections benefit from visual support.
-
-**Step 4: Visual Script (Shot List)**
-Outputs a detailed plan for each image: placement, theme, structure type, character action, suggested elements, and Chinese annotation keywords. Default: 4-8 images per article.
-
-**Step 5: Character Confirmation (Context Mode)**
-Presents 2-3 character concepts and awaits your selection.
-
-**Step 6: Single Image Generation**
-Generates each image sequentially with prompts containing: 16:9 declaration, dialect injection, character description, composition instructions, and constraint rules.
-
-**Step 7: Quality Gates**
-Checks against the quality checklist: character centrality, whitespace ratio, PPT avoidance, annotation readability, color discipline, and style consistency.
-
-**Step 8: Save & Deliver**
-Images saved to `assets/<article-slug>-illustrations/` with sequential naming `01-topic-name.png`.
+| Step | Name | Description |
+|:---:|:---|:---|
+| 0 | Workflow Mode Selection | Choose Quick Mode (1-step auto) or Expert Mode (full control) |
+| 1 | Mode Confirmation | Check `assets/ip-reference/` for reference image; ask user preference |
+| 2 | Language Selection | Auto-detect or manually select annotation language (zh/en/ja/ko) |
+| 3 | Aspect Ratio Selection | Choose canvas shape: 16:9, 9:16, 4:3, 3:4, 1:1, or 21:9 |
+| 4 | Quantity Confirmation | Confirm number of illustrations (1-9, smart recommendation) |
+| 5 | Style Selection | Select from 10 Visual Styles; optional Hybrid Mode mixing |
+| 6 | Content Digestion | Analyze article structure, cognitive anchors, visual opportunities |
+| 7 | Visual Script (Shot List) | Plan each image: placement, theme, composition, annotations |
+| 8 | Single Image Generation | Generate images sequentially with style/character/ratio injection |
+| 9 | Quality Gates & Save | Check quality, iterate if needed, save to `assets/<article-slug>-illustrations/` |
 
 ---
 
@@ -433,7 +423,7 @@ Use Japanese labels.                 ← Japanese annotations
 
 ```
 Generate illustrations for this article.     ← Quick Mode (auto-detect all)
-Use expert mode.                             ← Full 9-step pipeline
+Use expert mode.                             ← Full 10-step pipeline (Step 0-9)
 Same as last time.                           ← Reuse last session
 Show me the strategy first.                  ← Expert Mode + Strategy Report
 ```
@@ -533,6 +523,7 @@ This skill leverages session context mechanisms, combined with frozen character 
 | `references/series-character-continuity.md` | Series character save/reuse workflow |
 | `references/onboarding-guide.md` | First-time user guided walkthrough |
 | `references/error-handling.md` | Error scenarios and recovery strategies |
+| `references/platform-detection.md` | Platform keyword detection rules for Quick Mode auto-ratio |
 | `assets/style-previews/` | 10 Visual Style preview images |
 
 ---
