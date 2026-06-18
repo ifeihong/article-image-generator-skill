@@ -98,6 +98,16 @@ Before generating, the skill prompts you to select a visual style — a complete
 
 Each dialect includes a complete prompt-injection template that automatically appends to generation instructions, ensuring visual coherence across all illustrations in an article.
 
+**Style Previews** — Same character, same scene, 10 different styles:
+
+| Base Sketch | Retro-Tech | Organic Warmth | Minimal Geometry | Mixed Media |
+|:---:|:---:|:---:|:---:|:---:|
+| ![Base Sketch](assets/style-previews/00-base-sketch.jpg) | ![Retro-Tech](assets/style-previews/01-retro-tech.jpg) | ![Organic Warmth](assets/style-previews/02-organic-warmth.jpg) | ![Minimal Geometry](assets/style-previews/03-minimal-geometry.jpg) | ![Mixed Media](assets/style-previews/04-mixed-media.jpg) |
+
+| Ink-Wash Zen | Cyber-Neon | Woodcut Print | Clay Stop-Motion | Glitch Art |
+|:---:|:---:|:---:|:---:|:---:|
+| ![Ink-Wash Zen](assets/style-previews/05-ink-wash-zen.jpg) | ![Cyber-Neon](assets/style-previews/06-cyber-neon.jpg) | ![Woodcut Print](assets/style-previews/07-woodcut-print.jpg) | ![Clay Stop-Motion](assets/style-previews/08-clay-stop-motion.jpg) | ![Glitch Art](assets/style-previews/09-glitch-art.jpg) |
+
 ---
 
 ### Concept Forge: Four Creative Methodologies
@@ -548,44 +558,6 @@ A: Currently optimized for Chinese content (annotation conventions, layout habit
 **Q: How long does one image take?**
 
 A: GPT Image 2 typically 5-15 seconds per image; 4K resolution may take 20-30 seconds.
-
----
-
-## Changelog
-
-### v1.3 (2026-06-18)
-
-- First-time user onboarding: Guided Expert Mode with step-by-step walkthrough
-- Error handling: 15+ error scenarios with clear recovery strategies
-- Style preview gallery: 10 preview images in `assets/style-previews/`
-- Style browsing: "show me the styles" command to preview before selection
-
-### v1.2 (2026-06-18)
-
-- Multi-language annotation support: Auto-detect or manual (Chinese / English / Japanese / Korean)
-- Dual workflow modes: Quick Mode (1-step) and Expert Mode (full 9-step)
-- Hybrid Style Mixing: Combine two styles for unique visual effects
-- Session History & Reuse: Auto-save parameters, quick command reuse
-- Series Character Continuity: Save Context Anchor characters for series reuse
-- Illustration Strategy Report: Optional pre-generation cognitive analysis
-- Fixed context-anchor.md character consistency description
-
-### v1.1 (2026-06-18)
-
-- Configurable aspect ratios: 16:9, 9:16, 4:3, 3:4, 1:1, 21:9
-- Configurable quantity: 1-9 images per article with smart recommendations
-- Updated workflow: 9 steps with aspect ratio and quantity selection
-- Enhanced Visual Genome with multi-ratio specifications
-
-### v1.0 (2026-06-18)
-
-- Initial release
-- Dual Character Anchor Modes (Brand + Context)
-- 10 Visual Styles
-- Four Concept Forge methodologies
-- 8-step standardized workflow
-- User confirmation flow
-- Multi-language documentation (EN/ZH/JA/KO)
 
 ---
 
