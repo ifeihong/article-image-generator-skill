@@ -6,19 +6,19 @@
 ## 参考图存放位置
 ```
 assets/ip-reference/
-├── character-3view.png    ← 主参考图（三视图或完整形象）
+├── ip.png                 ← 主参考图（三视图或完整形象）
 ├── character-front.png    ← 正面（可选，辅助）
 ├── character-side.png     ← 侧面（可选，辅助）
 └── character-back.png     ← 背面（可选，辅助）
 ```
 
-**替换规则**：用户只需覆盖 `character-3view.png` 文件，即可替换角色形象。支持 PNG/JPG/WebP 格式。
+**替换规则**：用户只需覆盖 `ip.png` 文件，即可替换角色形象。支持 PNG/JPG/WebP 格式。
 
 ## 参考图使用规范
 
 ### 生图时必传参数
 ```
-reference_image: assets/ip-reference/character-3view.png
+reference_image: assets/ip-reference/ip.png
 reference_strength: 0.7
 ```
 
@@ -118,7 +118,7 @@ Make [角色名称] serious, deadpan, and slightly bizarre, not cute.
 用户上传了一只蓝色机械猫的三视图：
 
 ```text
-参考图路径：assets/ip-reference/character-3view.png
+参考图路径：assets/ip-reference/ip.png
 reference_strength: 0.7
 
 角色描述：

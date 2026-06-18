@@ -360,7 +360,7 @@ skills/
     ├── README.ko.md
     ├── assets/
     │   └── ip-reference/
-    │       └── character-3view.png    ← Brand Anchor reference (optional)
+    │       └── ip.png                ← Brand Anchor reference (optional)
     └── references/
         ├── visual-genome/
         ├── character-anchors/
@@ -382,7 +382,7 @@ Install Skill: https://github.com/ifeihong/article-image-generator-skill
 
 1. Download from [GitHub Releases](https://github.com/ifeihong/article-image-generator-skill/releases)
 2. Extract to your Skills directory
-3. For Brand Anchor mode, place your character turnaround in `assets/ip-reference/character-3view.png`
+3. For Brand Anchor mode, place your character turnaround in `assets/ip-reference/ip.png`
 
 ---
 
@@ -545,7 +545,7 @@ A: Current environment limitations. Improve by: (1) strengthening character keyw
 
 **Q: Can I save a Context Anchor character for future use?**
 
-A: Yes. Save the character description as an image and place it in `assets/ip-reference/character-3view.png` to convert it to Brand Anchor mode.
+A: Yes. Save the character description as an image and place it in `assets/ip-reference/ip.png` to convert it to Brand Anchor mode.
 
 **Q: Are generated images commercially usable?**
 

@@ -12,7 +12,7 @@ This document covers common error scenarios and recovery strategies. When an err
 ```
 ⚠️ Brand Anchor Mode requires a character reference image.
 
-Expected location: assets/ip-reference/character-3view.png
+Expected location: assets/ip-reference/ip.png
 
 Options:
 [1] Upload your character turnaround sheet to the above path

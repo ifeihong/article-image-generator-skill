@@ -55,7 +55,7 @@ Recurring IP character required:
 {角色名称} must perform the core conceptual action, not decorate the scene.
 Make {角色名称} serious, deadpan, and slightly bizarre, not cute.
 
-Reference image: assets/ip-reference/character-3view.png
+Reference image: assets/ip-reference/ip.png
 Reference strength: 0.7
 ```
 
