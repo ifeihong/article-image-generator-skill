@@ -367,6 +367,29 @@ Use Cyber-Neon style for this article.     ← Direct style selection
 Use Article Image Generator with Ink-Wash Zen style.  ← By style name
 ```
 
+### Specify Language
+
+```
+Generate with English annotations.   ← Manual language selection
+Use Japanese labels.                 ← Japanese annotations
+```
+
+### Quick Mode vs Expert Mode
+
+```
+Generate illustrations for this article.     ← Quick Mode (auto-detect all)
+Use expert mode.                             ← Full 9-step pipeline
+Same as last time.                           ← Reuse last session
+Show me the strategy first.                  ← Expert Mode + Strategy Report
+```
+
+### Series Character
+
+```
+Save this character for my AI Weekly series.  ← Save series character
+Use my AI Weekly character.                   ← Reuse series character
+```
+
 ### Complete Example
 
 ```
@@ -448,8 +471,11 @@ This skill leverages session context mechanisms, combined with frozen character 
 | `references/character-anchors/` | Brand Anchor and Context Anchor mode specifications |
 | `references/concept-forge/` | Heterogeneous Synthesis matrix and Cognitive Displacement methods |
 | `references/narrative-structures.md` | 8 narrative composition patterns |
-| `references/generation-protocols.md` | Prompt templates for both modes and all dialects |
+| `references/generation-protocols.md` | Generation prompt templates for both modes and all styles |
 | `references/quality-gates.md` | Post-generation quality checklist and iteration methods |
+| `references/session-history.md` | Session history format and reuse commands |
+| `references/illustration-strategy-report.md` | Strategy report structure and cognitive analysis framework |
+| `references/series-character-continuity.md` | Series character save/reuse workflow |
 
 ---
 

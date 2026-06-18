@@ -245,6 +245,9 @@ Article Image Generator を使用、4:3、3 枚。  ← 比率 + 枚数
 | `references/narrative-structures.md` | 8 つのナラティブ構図パターン |
 | `references/generation-protocols.md` | 両モードとすべてのスタイルのプロンプトテンプレート |
 | `references/quality-gates.md` | 生成後品質チェックリストと反復メソッド |
+| `references/session-history.md` | セッション履歴形式と再利用コマンド |
+| `references/illustration-strategy-report.md` | イラスト戦略レポート構造と認知分析フレームワーク |
+| `references/series-character-continuity.md` | シリーズキャラクター保存/再利用ワークフロー |
 
 ---
 

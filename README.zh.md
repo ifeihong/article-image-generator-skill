@@ -328,6 +328,29 @@ cd article-image-generator-skill
 使用 Article Image Generator，水墨禅意风格。  ← 按风格名
 ```
 
+### 指定语言
+
+```
+用英文标注。         ← 手动指定标注语言
+使用日文标签。       ← 日文标注
+```
+
+### 快速模式 vs 专家模式
+
+```
+给这篇文章生成配图。                    ← 快速模式（自动检测所有参数）
+使用专家模式。                          ← 完整 9 步流程
+和上次一样。                            ← 复用上次参数
+先出策略。                              ← 专家模式 + 策略报告
+```
+
+### 系列角色
+
+```
+保存这个角色用于AI周报系列。            ← 保存系列角色
+用AI周报的角色。                        ← 复用系列角色
+```
+
 ---
 
 ## 文件结构
@@ -346,6 +369,9 @@ cd article-image-generator-skill
 | `references/narrative-structures.md` | 8 种叙事构图模式 |
 | `references/generation-protocols.md` | 双模式和所有画风的提示词模板 |
 | `references/quality-gates.md` | 生成后质量检查清单和迭代方法 |
+| `references/session-history.md` | 历史记录格式与复用命令 |
+| `references/illustration-strategy-report.md` | 配图策略报告结构与认知分析框架 |
+| `references/series-character-continuity.md` | 系列角色保存/复用工作流 |
 
 ---
 

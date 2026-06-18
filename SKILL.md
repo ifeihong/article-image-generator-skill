@@ -261,7 +261,7 @@ If user says "show strategy first" / "先出策略":
 - Wait for user approval before proceeding to Visual Script
 
 ### Step 7: Visual Script (Shot List)
-If the user says "analyze illustration strategy," output a Visual Script first. For each image, specify:
+If the user says "analyze illustration strategy" / "analyze" / "show me the plan", output a Visual Script first. For each image, specify:
 - Placement: after which paragraph
 - Theme: what the image is about
 - Core idea: what concept it communicates

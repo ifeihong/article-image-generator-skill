@@ -245,6 +245,9 @@ Article Image Generator 사용, 4:3, 3장.  ← 비율 + 수량
 | `references/narrative-structures.md` | 8가지 서사 구도 패턴 |
 | `references/generation-protocols.md` | 양 모드와 모든 스타일의 프롬프트 템플릿 |
 | `references/quality-gates.md` | 생성 후 품질 체크리스트와 반복 방법 |
+| `references/session-history.md` | 세션 기록 형식과 재사용 명령 |
+| `references/illustration-strategy-report.md` | 일러스트 전략 보고서 구조와 인지 분석 프레임워크 |
+| `references/series-character-continuity.md` | 시리즈 캐릭터 저장/재사용 워크플로우 |
 
 ---
 

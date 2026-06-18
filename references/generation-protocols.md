@@ -23,11 +23,14 @@ Composition:
 Suggested elements:
 {元素1} / {元素2} / {元素3} / {元素4}
 
-Chinese handwritten labels:
+Handwritten labels (in selected language):
 {标注词1} / {标注词2} / {标注词3} / {标注词4} / {可选标注词5}
+Language: {zh/en/ja/ko} — All labels must be in this language
 
-Color use:
+Color use (Base Sketch default):
 Black for main line art and character. Orange for main flow/path/arrows. Red only for key warnings/problems/results. Blue only for secondary notes or feedback/system state.
+
+Note: For non-Base-Sketch styles, follow the color discipline defined in the selected style (see dialect-atlas.md).
 
 Constraints:
 One image explains only one core structure. Keep the main subject around 40%-60% of the canvas. Preserve at least 35% blank white space. Use at most 5-8 short handwritten Chinese labels. Do not write a title in the top-left corner. Do not write the structure type on the image. Do not make it a formal diagram, course slide, or dense explainer. Do not copy prior examples or reuse known case compositions unless explicitly requested; invent a fresh visual metaphor for this specific article. It should be clear but not instructional, interesting but not childish, strange but clean.

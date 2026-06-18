@@ -27,6 +27,8 @@ reference_strength: 0.7
   - 0.7：平衡一致性与创作空间（推荐）
   - 0.8：高度一致，几乎完全复刻参考图
 
+**Note**: The current Codex/Trae GenerateImage tool does not support a `reference_image` parameter. When the underlying tool supports it, use `reference_image` + `reference_strength`. Until then, achieve consistency through enhanced text descriptions + session context (see SKILL.md Technical Notes).
+
 ### 提示词中的角色描述块
 即使传入参考图，提示词中仍需包含完整的角色文字描述，作为**双重保险**：
 
