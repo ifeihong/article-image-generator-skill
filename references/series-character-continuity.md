@@ -12,7 +12,7 @@ After generating images for Article 1, user says:
 - "Save this character for the series" / "保存这个角色用于系列文章"
 - "Make this my AI Weekly character" / "设为我的AI周报角色"
 
-The skill saves to `assets/session-history.json` → `series_characters`:
+The skill saves to `output/session-history.json` → `series_characters`:
 
 ```json
 {

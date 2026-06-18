@@ -207,7 +207,7 @@ The skill automatically saves your generation parameters after each session. Reu
 | "Show my history" | List last 10 sessions |
 | "Reuse session 3" | Load specific session |
 
-History is stored locally in `assets/session-history.json` — no data leaves your machine.
+History is stored locally in `output/session-history.json` — no data leaves your machine.
 
 ---
 
@@ -312,7 +312,7 @@ Step 0: Workflow Mode Selection → Step 1: Mode Confirmation → Step 2: Langua
 | 6 | Content Digestion | Analyze article structure, cognitive anchors, visual opportunities |
 | 7 | Visual Script (Shot List) | Plan each image: placement, theme, composition, annotations |
 | 8 | Single Image Generation | Generate images sequentially with style/character/ratio injection |
-| 9 | Quality Gates & Save | Check quality, iterate if needed, save to `assets/<article-slug>-illustrations/` |
+| 9 | Quality Gates & Save | Check quality, iterate if needed, save to `output/<article-slug>/` |
 
 ---
 
@@ -348,9 +348,11 @@ skills/
     ├── README.zh.md
     ├── README.ja.md
     ├── README.ko.md
+    ├── output/                       ← Generated illustrations (auto-created)
     ├── assets/
-    │   └── ip-reference/
-    │       └── ip.png                ← Brand Anchor reference (optional)
+    │   ├── style-previews/           ← 10 style preview images (bundled)
+    │   └── ip-reference/             ← Brand Anchor reference (user-provided)
+    │       └── ip.png
     └── references/
         ├── visual-genome/
         ├── character-anchors/
@@ -511,7 +513,7 @@ This skill leverages session context mechanisms, combined with frozen character 
 | `README.zh.md` | Chinese documentation |
 | `README.ja.md` | Japanese documentation |
 | `README.ko.md` | Korean documentation |
-| `assets/ip-reference/` | Brand Anchor mode reference image storage |
+| `output/` | Generated illustrations and session history (user output) |
 | `references/visual-genome/` | Base visual DNA and 10 dialect definitions |
 | `references/character-anchors/` | Brand Anchor and Context Anchor mode specifications |
 | `references/concept-forge/` | Heterogeneous Synthesis matrix and Cognitive Displacement methods |
@@ -524,7 +526,8 @@ This skill leverages session context mechanisms, combined with frozen character 
 | `references/onboarding-guide.md` | First-time user guided walkthrough |
 | `references/error-handling.md` | Error scenarios and recovery strategies |
 | `references/platform-detection.md` | Platform keyword detection rules for Quick Mode auto-ratio |
-| `assets/style-previews/` | 10 Visual Style preview images |
+| `assets/style-previews/` | 10 Visual Style preview images (bundled) |
+| `assets/ip-reference/` | Brand Anchor mode reference image (user-provided, not in repo) |
 
 ---
 

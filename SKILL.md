@@ -50,7 +50,7 @@ Full 10-step pipeline (Step 0-9) with granular control. Activated when user says
 - **First-time users**: Automatically enters Guided Expert Mode (see below)
 
 ### First-Time User Onboarding
-When `assets/session-history.json` does NOT exist, the skill automatically enters **Guided Expert Mode** — a step-by-step walkthrough that explains each parameter before proceeding. See `references/onboarding-guide.md` for the complete guided flow.
+When `output/session-history.json` does NOT exist, the skill automatically enters **Guided Expert Mode** — a step-by-step walkthrough that explains each parameter before proceeding. See `references/onboarding-guide.md` for the complete guided flow.
 
 Skip commands:
 - "skip guide" / "跳过引导" → Enter normal Expert Mode
@@ -347,7 +347,7 @@ After generation, check against `references/quality-gates.md`. Common issues:
 ### Step 9: Save & Deliver
 Save final images to:
 ```text
-assets/<article-slug>-illustrations/
+output/<article-slug>/
 ```
 Name sequentially:
 ```text
@@ -355,7 +355,7 @@ Name sequentially:
 02-topic-name.png
 ```
 
-**Auto-Save to History**: After successful generation, append session to `assets/session-history.json` with all parameters.
+**Auto-Save to History**: After successful generation, append session to `output/session-history.json` with all parameters.
 
 **Series Character Prompt**: If user says "save this character for series" → Save to `session-history.json` → `series_characters` (see `references/series-character-continuity.md`)
 

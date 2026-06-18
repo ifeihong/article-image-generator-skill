@@ -7,7 +7,7 @@ When a new user invokes the skill for the first time (no `session-history.json` 
 ## Detection
 
 ```text
-IF assets/session-history.json does NOT exist:
+IF output/session-history.json does NOT exist:
     → First-time user detected
     → Enter Guided Expert Mode
 ELSE:
@@ -255,7 +255,7 @@ Which character do you prefer? (A/B/modify)
 ✅ Generated [N] illustrations in [Style] style
 ✅ Aspect ratio: [ratio]
 ✅ Annotation language: [language]
-✅ Saved to: assets/[article-slug]-illustrations/
+✅ Saved to: output/[article-slug]/
 
 💡 Tips for next time:
 - Say "same as last time" to reuse these settings

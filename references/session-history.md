@@ -2,11 +2,11 @@
 
 ## Overview
 
-The skill automatically saves generation parameters and user preferences to `assets/session-history.json` after each successful generation. This enables quick reuse of proven configurations and personalized defaults.
+The skill automatically saves generation parameters and user preferences to `output/session-history.json` after each successful generation. This enables quick reuse of proven configurations and personalized defaults.
 
 ## History File Format
 
-`assets/session-history.json`:
+`output/session-history.json`:
 
 ```json
 {
@@ -78,4 +78,4 @@ After each successful generation, append to history:
 
 ## Privacy Note
 
-History is stored locally in `assets/session-history.json`. No data leaves the user's machine. Users can delete the file at any time to clear history.
+History is stored locally in `output/session-history.json`. No data leaves the user's machine. Users can delete the file at any time to clear history.
