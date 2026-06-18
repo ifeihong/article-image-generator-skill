@@ -331,7 +331,7 @@ Every image prompt must include:
 - Character as the core action subject
 - Prohibition: PPT, commercial illustration, childish/cute, complex architecture, top-left corner type titles
 
-### Step 9: Quality Gates
+### Step 9: Quality Gates & Save
 After generation, check against `references/quality-gates.md`. Common issues:
 - Aspect ratio consistency: All images use the same ratio as selected in Step 3
 - Character is merely decorative (not performing core action)
@@ -344,7 +344,6 @@ After generation, check against `references/quality-gates.md`. Common issues:
 - **Brand Anchor Mode extra check**: Does character match reference image? Do signature features appear?
 - **Language check**: Are annotations in the correct language? Are they readable?
 
-### Step 9: Save & Deliver
 Save final images to:
 ```text
 output/<article-slug>/

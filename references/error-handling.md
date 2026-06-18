@@ -249,7 +249,7 @@ Possible causes:
 - Permission denied
 - Disk full
 
-Attempting to save to alternative location: assets/
+Attempting to save to alternative location: output/
 
 Options:
 [1] Retry save

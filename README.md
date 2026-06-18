@@ -298,7 +298,7 @@ Preview images for all 10 styles are available in `assets/style-previews/`. Say 
 Step 0: Workflow Mode Selection → Step 1: Mode Confirmation → Step 2: Language Selection
     → Step 3: Aspect Ratio Selection → Step 4: Quantity Confirmation → Step 5: Style Selection
     → Step 6: Content Digestion → Step 7: Visual Script (Shot List)
-    → Step 8: Single Image Generation → Step 9: Quality Gates → Step 9: Save & Deliver
+    → Step 8: Single Image Generation → Step 9: Quality Gates & Save
 ```
 
 | Step | Name | Description |

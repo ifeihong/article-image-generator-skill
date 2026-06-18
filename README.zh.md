@@ -31,8 +31,6 @@
 
 ---
 
----
-
 ## 核心功能
 
 ### 双角色锚定模式
@@ -316,6 +314,43 @@ cd article-image-generator-skill
 | **Trae** | `~/.trae/skills/` 或项目根目录的 `.trae/skills/` |
 | **Claude Code** | `~/.claude/skills/` 或项目根目录的 `.claude/skills/` |
 
+预期目录结构：
+```
+skills/
+└── article-image-generator/
+    ├── SKILL.md
+    ├── README.md
+    ├── README.zh.md
+    ├── README.ja.md
+    ├── README.ko.md
+    ├── output/                       ← 生成的插图（自动生成）
+    ├── assets/
+    │   ├── style-previews/           ← 10 种风格预览图（仓库自带）
+    │   └── ip-reference/             ← 品牌锚定参考图（用户自行上传）
+    │       └── ip.png
+    └── references/
+        ├── visual-genome/
+        ├── character-anchors/
+        ├── concept-forge/
+        ├── narrative-structures.md
+        ├── generation-protocols.md
+        └── quality-gates.md
+```
+
+### 方式二：直接安装（Trae/Codex 原生）
+
+部分 AI 助手支持从 GitHub URL 直接安装：
+
+```
+Install Skill: https://github.com/ifeihong/article-image-generator-skill
+```
+
+### 方式三：手动下载
+
+1. 从 [GitHub Releases](https://github.com/ifeihong/article-image-generator-skill/releases) 下载
+2. 解压到 Skills 目录
+3. 品牌锚定模式下，将角色参考图放入 `assets/ip-reference/ip.png`
+
 ---
 
 ## 快速开始
@@ -377,6 +412,95 @@ cd article-image-generator-skill
 用AI周报的角色。                        ← 复用系列角色
 ```
 
+### 完整示例
+
+```
+使用 Article Image Generator，情境锚定模式，9:16 画幅，6 张配图，
+赛博霓虹风格，为以下文章生成插图：
+
+[文章正文...]
+```
+
+---
+
+## 专业工作流：10 步流程（Step 0-9）
+
+```
+Step 0: 工作流模式选择 → Step 1: 模式确认 → Step 2: 语言选择
+    → Step 3: 画幅选择 → Step 4: 数量确认 → Step 5: 画风选择
+    → Step 6: 内容消化 → Step 7: 视觉脚本（分镜表）
+    → Step 8: 逐张生成 → Step 9: 质量检查与保存
+```
+
+| 步骤 | 名称 | 说明 |
+|:---:|:---|:---|
+| 0 | 工作流模式选择 | 选择快速模式（1步自动）或专家模式（完整控制） |
+| 1 | 模式确认 | 检查 `assets/ip-reference/` 是否有参考图，询问用户偏好 |
+| 2 | 语言选择 | 自动检测或手动选择标注语言（zh/en/ja/ko） |
+| 3 | 画幅选择 | 选择画布形状：16:9、9:16、4:3、3:4、1:1 或 21:9 |
+| 4 | 数量确认 | 确认插图数量（1-9 张，智能推荐） |
+| 5 | 画风选择 | 从 10 种视觉风格中选择；可选混合模式 |
+| 6 | 内容消化 | 分析文章结构、认知锚点、视觉机会 |
+| 7 | 视觉脚本（分镜表） | 规划每张图：位置、主题、构图、标注 |
+| 8 | 逐张生成 | 按序生成插图，注入风格/角色/画幅 |
+| 9 | 质量检查与保存 | 检查质量，迭代优化，保存到 `output/<article-slug>/` |
+
+---
+
+## 视觉基因
+
+所有风格共享的基础 DNA：
+
+- **可配置画幅** — 16:9（默认）、9:16、4:3、3:4、1:1 或 21:9
+- **纯白画布**：无米色、暖灰、纸质纹理、渐变或阴影
+- **黑色手绘线条**：纤细、略带抖动、非机械、非矢量
+- **充足留白**：主体占画布 40-60%；至少 35% 空白
+- **少量手写标注**：最多 5-8 处，每处 2-8 个字符
+- **一图一核心**：单一动作、结构、状态或隐喻
+
+### 色彩纪律
+
+| 颜色 | 用途 |
+|-------|---------|
+| 黑色 | 主要线稿、角色、框架、主要文字 |
+| 红色 | 关键标注、问题、情感点、重要提醒、结果 |
+| 橙色 | 主要流程、路径、箭头、从 A 到 B 的移动 |
+| 蓝色 | 补充说明、系统状态、次要解释、AI/自动化提示 |
+
+蓝色每张图可选。色彩使用应克制 — 少即是多。
+
+### 避免事项
+
+- 商业插图、PPT 信息图、正式流程图
+- 课程幻灯片、可爱卡通海报、儿童插图
+- 复杂架构图、精致的扁平插图、科技 UI 美学
+- 真实应用截图、复杂背景、渐变、阴影
+- 过度解释每个节点
+- 左上角标题"工作流 / 系统架构 / 常见陷阱"
+
+---
+
+## 技术说明
+
+### 参考图上传（品牌锚定模式）
+
+当前 Codex/Trae `GenerateImage` 工具不支持 `reference_image` 参数。品牌锚定模式通过以下方式实现一致性：
+
+1. **增强文本描述**：在每个提示词中嵌入全面的角色外观描述
+2. **GPT Image 2 会话上下文**：同一会话内的多轮生成引用历史输出
+3. **固定角色描述**：所有图像中复用的标准化描述格式
+
+**未来增强**：当底层工具支持参考图参数时，`character-anchors/brand-anchor.md` 将更新为使用 `reference_image` 和 `reference_strength` 实现真正的图像级角色锁定。
+
+### GPT Image 2 多图一致性
+
+GPT Image 2 (ChatGPT Images 2.0) 支持：
+- 单提示词生成 8 张一致角色和风格的图像
+- 多轮对话编辑：会话内引用历史输出
+- 4K 分辨率和精确文本渲染
+
+本 Skill 利用会话上下文机制，结合固定角色描述，最大化情境锚定模式下的一致性概率。
+
 ---
 
 ## 文件结构
@@ -403,6 +527,40 @@ cd article-image-generator-skill
 | `references/onboarding-guide.md` | 首次使用引导流程 |
 | `references/error-handling.md` | 错误场景与恢复策略 |
 | `references/platform-detection.md` | 快速模式平台关键词自动检测规则 |
+
+---
+
+## FAQ
+
+**Q: 品牌锚定模式的角色和参考图不一致。**
+
+A: 当前环境限制。改善方法：(1) 强化提示词中的角色关键词，(2) 确保参考图清晰、完整、白背景，(3) 简化角色设计。真正的参考图支持计划在后续更新中实现。
+
+**Q: 情境锚定模式的角色可以保存供以后使用吗？**
+
+A: 可以。将角色描述保存为图片，放入 `assets/ip-reference/ip.png` 即可转换为品牌锚定模式。
+
+**Q: 生成的图片可以商用吗？**
+
+A: 取决于底层图像生成模型的使用条款。GPT Image 2 的输出通常可商用；请查看 OpenAI 当前的使用政策。
+
+**Q: 支持英文文章吗？**
+
+A: 目前针对中文内容优化（标注规范、排版习惯）。英文文章也可使用，但标注可能不够自然。
+
+**Q: 一张图需要多长时间？**
+
+A: GPT Image 2 通常每张 5-15 秒；4K 分辨率可能需要 20-30 秒。
+
+---
+
+## 贡献
+
+欢迎提交 Issue 和 Pull Request！
+
+- Bug 或问题：[提交 Issue](https://github.com/ifeihong/article-image-generator-skill/issues)
+- 新风格或功能：[提交 PR](https://github.com/ifeihong/article-image-generator-skill/pulls)
+- 作品展示：在 Issue 中添加 `showcase` 标签
 
 ---
 
