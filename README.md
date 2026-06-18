@@ -60,12 +60,12 @@ Before generating, the skill guides you through two quick configuration steps:
 
 | Ratio | Orientation | Best For |
 |:---:|:---:|:---|
-| **16:9** | Horizontal | Article body, blog posts, video covers (default) |
-| **9:16** | Vertical | Xiaohongshu, Douyin, phone wallpapers, short videos |
-| **4:3** | Horizontal | PPT, course slides, reports, presentations |
-| **3:4** | Vertical | Xiaohongshu graphics, Instagram, social media |
-| **1:1** | Square | Avatars, social media, product shots, square posters |
-| **21:9** | Ultra-wide | Banners, website covers, Bilibili headers, widescreen |
+| **16:9** | Horizontal | Blog posts, YouTube thumbnails, LinkedIn articles, Medium (default) |
+| **9:16** | Vertical | TikTok, Instagram Reels, YouTube Shorts, Pinterest, phone wallpapers |
+| **4:3** | Horizontal | PowerPoint, Keynote, course slides, reports, presentations |
+| **3:4** | Vertical | Instagram carousel, Facebook posts, Pinterest pins, Substack |
+| **1:1** | Square | Instagram feed, Twitter/X, avatars, product shots, square ads |
+| **21:9** | Ultra-wide | Website banners, Twitter/X headers, Twitch, ultrawide displays |
 
 The skill provides smart recommendations based on your content type, but you can override with any ratio.
 
