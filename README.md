@@ -138,6 +138,105 @@ The skill never generates characters without your approval:
 
 ---
 
+### Multi-Language Annotation Support
+
+The skill auto-detects your article's language and generates annotations in the same language — or you can manually select:
+
+| Detected Language | Annotation Style | Example |
+|:---|:---|:---|
+| **Chinese** | Horizontal, 2-8 characters, handwritten | 光芯片 / 数据流 / 瓶颈 |
+| **English** | Horizontal, 1-3 words, handwritten | Light Chip / Data Flow / Bottleneck |
+| **Japanese** | Horizontal or vertical, brief phrases | 光チップ / データ流 / ボトルネック |
+| **Korean** | Horizontal, short phrases | 광칩 / 데이터 흐름 / 병목 |
+
+**Auto-detection**: Analyzes article text (>50% character type). **Manual override**: "Generate with English annotations."
+
+---
+
+### Quick Mode vs Expert Mode
+
+Choose your workflow based on time and control needs:
+
+| Aspect | Quick Mode | Expert Mode |
+|--------|-----------|-------------|
+| **Steps** | 1-step auto-detect | Full 9-step pipeline |
+| **Best For** | Fast results, familiar users | First-time users, precise control |
+| **Parameters** | All auto-detected | User selects each parameter |
+| **Override** | Inline overrides supported | Full granular control |
+| **Strategy Report** | Skipped | Optional pre-generation |
+
+**Quick Mode Example**: "Generate illustrations for this article" → Auto-detects language, 16:9, 6 images, Base Sketch.
+
+**Expert Mode Example**: "Expert mode" → Step-by-step: mode → language → aspect ratio → quantity → style → (optional strategy report) → content digestion → generation.
+
+---
+
+### Hybrid Style Mixing (Expert Mode)
+
+Combine two styles for unique visual effects:
+
+| Primary (60-70%) | Secondary (30-40%) | Result |
+|:---|:---|:---|
+| Ink-Wash Zen | Cyber-Neon | "Neon ink painting" — traditional brush with glowing accents |
+| Clay Stop-Motion | Glitch Art | "Corrupted clay" — handmade forms with digital artifacts |
+| Retro-Tech | Organic Warmth | "Bio-mechanical vintage" — old machinery with plant overgrowth |
+
+Activate by selecting **[H] Hybrid Mode** during style selection.
+
+---
+
+### Session History & Reuse
+
+The skill automatically saves your generation parameters after each session. Reuse with simple commands:
+
+| Command | Action |
+|:---|:---|
+| "Use the same settings as last time" | Load last session |
+| "Use my default settings" | Load saved defaults |
+| "Save this as my default" | Save current params |
+| "Show my history" | List last 10 sessions |
+| "Reuse session 3" | Load specific session |
+
+History is stored locally in `assets/session-history.json` — no data leaves your machine.
+
+---
+
+### Series Character Continuity
+
+Writing a series? Save your Context Anchor character for reuse across multiple articles:
+
+1. **Save**: "Save this character for my AI Weekly series" → Stored in session history
+2. **Reuse**: "Use my AI Weekly character" → Skips confirmation, uses saved character
+3. **Manage**: List, update, retire, or clone series characters
+
+| Feature | Brand Anchor | Series Character | Context Anchor |
+|--------|-------------|------------------|----------------|
+| Scope | All content | One series | One article |
+| Persistence | Permanent | Semi-permanent | Temporary |
+| Best For | Personal IP | Column series, newsletters | One-off articles |
+
+---
+
+### Illustration Strategy Report (Expert Mode)
+
+Before generating, request a strategy report to understand the visual thinking:
+
+```
+"Show me the strategy first"
+```
+
+The report includes:
+- **Content Analysis**: Article type, core argument, target audience
+- **Visual Anchor Points**: Which sections need images and why
+- **Cognitive Load Map**: Text-only vs visual-supported sections
+- **Character Strategy**: Why this character fits the content
+- **Style Justification**: Why this style matches the tone
+- **Quantity & Placement**: How many images and where
+
+This turns image generation into a teachable content design process.
+
+---
+
 ### Professional Workflow: 8-Step Standardized Pipeline
 
 ```
@@ -380,13 +479,25 @@ A: GPT Image 2 typically 5-15 seconds per image; 4K resolution may take 20-30 se
 
 ## Changelog
 
+### v1.2 (2026-06-18)
+
+- Multi-language annotation support: Auto-detect or manual (Chinese / English / Japanese / Korean)
+- Dual workflow modes: Quick Mode (1-step) and Expert Mode (full 9-step)
+- Hybrid Style Mixing: Combine two styles for unique visual effects
+- Session History & Reuse: Auto-save parameters, quick command reuse
+- Series Character Continuity: Save Context Anchor characters for series reuse
+- Illustration Strategy Report: Optional pre-generation cognitive analysis
+- Fixed context-anchor.md character consistency description
+
 ### v1.1 (2026-06-18)
+
 - Configurable aspect ratios: 16:9, 9:16, 4:3, 3:4, 1:1, 21:9
 - Configurable quantity: 1-9 images per article with smart recommendations
 - Updated workflow: 9 steps with aspect ratio and quantity selection
 - Enhanced Visual Genome with multi-ratio specifications
 
 ### v1.0 (2026-06-18)
+
 - Initial release
 - Dual Character Anchor Modes (Brand + Context)
 - 10 Visual Styles
