@@ -1,6 +1,7 @@
 ---
 name: article-image-generator
-description: 为中文文章生成16:9横版正文配图。支持两种模式：固定IP模式（使用用户提供的角色三视图作为参考图，生成高度一致的角色形象）和自由角色模式（每篇文章/主题定制不同角色）。默认使用纯白手绘、大量留白、少量彩色批注、怪诞但清爽的视觉风格。内置10种可选视觉风格。用于文章配图、shot list规划、概念可视化、去标题/改图等任务。
+description: AI-powered Chinese article illustration generator. Creates 16:9 horizontal illustrations with dual IP modes (fixed character reference or free-form custom character) and 10 visual styles. Optimized for Codex, Trae, and Claude Code. Generates creative, hand-drawn style illustrations for blog posts, reports, and social media content with consistent character branding.
+keywords: AI image generator, article illustration, Codex skill, Trae skill, Claude Code skill, Chinese content creation, 16:9 illustration, character consistency, visual style engine, GPT Image 2, blog illustration generator, WeChat article images, content creation tool
 ---
 
 # Article Image Generator — 文章配图生成器
