@@ -1,11 +1,11 @@
-# 生图提示词模板
+# 生成协议 (Generation Protocols)
 
 ## 通用基础（所有模式共用）
 
 ```text
-Generate one standalone 16:9 horizontal Chinese article illustration.
+Generate one standalone {aspect_ratio} Chinese article illustration.
 
-Visual DNA:
+Visual Genome:
 Pure white background. Minimalist black hand-drawn line art. Slightly wobbly pen lines. Lots of empty white space. Sparse red/orange/blue handwritten Chinese annotations. Clean absurd product-sketch feeling. No gradients, no shadows, no paper texture, no complex background, no commercial vector style, no PPT infographic look, no cute mascot poster, no children's illustration, no realistic UI.
 
 Theme:
@@ -35,13 +35,13 @@ One image explains only one core structure. Keep the main subject around 40%-60%
 
 ---
 
-## 固定IP模式专用模板
+## 品牌锚定模式专用模板
 
 在通用基础前增加：
 
 ```text
 Recurring IP character required:
-{角色名称}, {来自 fixed-ip.md 的完整角色描述}
+{角色名称}, {来自 brand-anchor.md 的完整角色描述}
 - 外形：{颜色、形状、比例}
 - 头部：{面部特征、发型、五官}
 - 身体：{服装、配饰、标志性元素}
@@ -58,7 +58,7 @@ Reference strength: 0.7
 
 ---
 
-## 自由角色模式专用模板
+## 情境锚定模式专用模板
 
 在通用基础前增加：
 
@@ -66,9 +66,9 @@ Reference strength: 0.7
 Character design for this illustration:
 {角色名称}, {为该主题定制的角色描述}
 
-角色生成方法：{主题直译法 / 跨界混搭法 / 荒诞逻辑法 / 随机触发法}
-- 如用跨界混搭法：结构来源={}，质感来源={}，动作来源={}
-- 如用荒诞逻辑法：错位类型={尺度/功能/时空/情感}，具体错位={}
+角色生成方法：{直译法 / 异质合成法 / 认知错位法 / 随机触发法}
+- 如用异质合成法：结构来源={}，质感来源={}，动作来源={}
+- 如用认知错位法：错位类型={尺度/功能/时空/情感}，具体错位={}
 
 {角色名称} must perform the core conceptual action, not decorate the scene.
 Make {角色名称} strange but clean, interesting but not childish.
@@ -87,6 +87,17 @@ Style variant: {变体名称}
 
 ---
 
+## 画幅比例声明
+
+根据用户选择的画幅，在提示词中明确声明：
+
+```text
+Aspect ratio: {16:9 / 9:16 / 4:3 / 3:4 / 1:1 / 21:9}
+Image size: {对应推荐尺寸}
+```
+
+---
+
 ## 图像编辑提示
 
 ### 去掉左上角标题
@@ -99,7 +110,7 @@ Edit the provided image. Remove only the handwritten title "{要删除的文字}
 Regenerate this illustration with the same core meaning and simple layout, but make the character more central to the conceptual action. The character should be doing the strange work that explains the idea, not standing beside the diagram. Keep it clean, sparse, hand-drawn, and not cute.
 ```
 
-### 固定IP模式角色修正
+### 品牌锚定模式角色修正
 ```text
 Regenerate this illustration with the same composition and meaning, but ensure the character matches the reference image exactly. Key features to preserve: {列出3-5个关键特征}. The character must perform the core action while maintaining these features.
 ```

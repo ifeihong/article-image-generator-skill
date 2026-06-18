@@ -1,18 +1,22 @@
 ---
 name: article-image-generator
-description: AI-powered article illustration generator for Codex, Trae, and Claude Code. Creates 16:9 horizontal illustrations with dual Character Anchor Modes (Brand Anchor with fixed character reference or Context Anchor with custom per-article character) and 10 Visual Dialects. Generates creative, hand-drawn style illustrations for blog posts, reports, and social media content with consistent character branding and visual storytelling.
-keywords: AI image generator, article illustration, Codex skill, Trae skill, Claude Code skill, content creation, 16:9 illustration, character consistency, visual dialect, GPT Image 2, blog illustration generator, WeChat article images, visual storytelling, content branding
+description: AI-powered article illustration generator for Codex, Trae, and Claude Code. Creates illustrations with configurable aspect ratios (16:9, 9:16, 4:3, 3:4, 1:1, 21:9) and quantity (1-9 images). Features dual Character Anchor Modes (Brand Anchor with fixed character reference or Context Anchor with custom per-article character) and 10 Visual Styles. Generates creative, hand-drawn style illustrations for blog posts, reports, and social media content with consistent character branding and visual storytelling.
+keywords: AI image generator, article illustration, Codex skill, Trae skill, Claude Code skill, content creation, 16:9 illustration, 9:16 illustration, character consistency, visual style, GPT Image 2, blog illustration generator, WeChat article images, visual storytelling, content branding, aspect ratio configurable
 ---
 
 # Article Image Generator
 
 ## Core Positioning
 
-Transform written content into compelling 16:9 horizontal illustrations. Convert key judgments, workflows, structures, states, or metaphors from articles into clean, absurd, creative, readable — yet non-instructional — hand-drawn explanatory visuals.
+Transform written content into compelling illustrations with configurable aspect ratios and quantity. Convert key judgments, workflows, structures, states, or metaphors from articles into clean, absurd, creative, readable — yet non-instructional — hand-drawn explanatory visuals.
 
 Supports two Character Anchor Modes:
 - **Brand Anchor Mode**: Uses a user-provided character reference image. The same figure appears in every illustration, ideal for brand consistency and visual identity
 - **Context Anchor Mode**: Generates a bespoke character tailored to each article's theme. **All illustrations within one article use the same character**, maximizing content-native creativity and conceptual depth
+
+Configurable output:
+- **Aspect Ratio**: 16:9 (default), 9:16, 4:3, 3:4, 1:1, 21:9
+- **Quantity**: 1-9 images per article (smart recommendation based on content length)
 
 ## Dual Anchor System
 
@@ -35,12 +39,12 @@ Supports two Character Anchor Modes:
 Read on-demand based on task requirements; do not load everything at once:
 
 ### Universal References (both modes)
-- `references/visual-genome/base-genome.md`: Visual DNA, color discipline, typography, prohibitions
-- `references/visual-genome/dialect-atlas.md`: 10 Visual Dialect definitions and prompt-injection templates
+- `references/visual-genome/base-genome.md`: Visual DNA, aspect ratio specifications, color discipline, typography, prohibitions
+- `references/visual-genome/dialect-atlas.md`: 10 Visual Style definitions and prompt-injection templates
 - `references/concept-forge/heterogeneous-synthesis.md`: Cross-domain synthesis matrix for character design
 - `references/concept-forge/cognitive-displacement.md`: Four types of deliberate misalignment for creative visuals
 - `references/narrative-structures.md`: 8 narrative composition patterns
-- `references/generation-protocols.md`: Generation prompt templates for both modes and all dialects
+- `references/generation-protocols.md`: Generation prompt templates for both modes, all styles, and all aspect ratios
 - `references/quality-gates.md`: Post-generation quality checklist and iteration methods
 
 ### Mode-Specific References
@@ -55,12 +59,66 @@ Determine which mode to use:
 - Ask user preference if not explicitly stated
 - Read the corresponding mode reference document after confirmation
 
-### Step 2: Dialect Selection
-**Before digesting content, the user MUST select a Visual Dialect.**
+### Step 2: Aspect Ratio Selection
+**Before digesting content, the user MUST select an aspect ratio.**
 
-Present the dialect menu:
+Present the aspect ratio menu with smart recommendation:
 ```
-Please select a Visual Dialect (enter number or dialect name):
+Please select an aspect ratio (enter number or ratio, press Enter for recommendation):
+
+[Recommended] Based on your content type, suggested: 16:9 horizontal (article illustration)
+
+Available ratios:
+[1] 16:9 horizontal — Article body, blog posts, video covers (default)
+[2] 9:16 vertical — Xiaohongshu, Douyin, phone wallpapers, short videos
+[3] 4:3 horizontal — PPT, course slides, reports, presentations
+[4] 3:4 vertical — Xiaohongshu graphics, Instagram, social media
+[5] 1:1 square — Avatars, social media, product shots, square posters
+[6] 21:9 ultra-wide — Banners, website covers, Bilibili headers, widescreen
+
+Reply with a number (e.g., "2") or ratio (e.g., "9:16"). Press Enter for recommended value.
+```
+
+- Confirm user selection
+- Lock the aspect ratio for all images in this article (cannot be changed mid-task)
+- User says "default" / "standard" / "no preference" → Use [1] 16:9
+
+**Smart Recommendation Logic**:
+- Detected WeChat Official Account / blog / report content → Recommend 16:9
+- Detected Xiaohongshu / Douyin / short video content → Recommend 9:16 or 3:4
+- Detected PPT / courseware / presentation content → Recommend 4:3
+- Detected social media / avatar content → Recommend 1:1
+- No specific platform detected → Recommend 16:9 (default)
+
+### Step 3: Quantity Confirmation
+**Before digesting content, confirm the number of illustrations.**
+
+Present quantity recommendation:
+```
+Please enter the number of illustrations (1-9, press Enter for recommendation):
+
+[Recommended] Based on article length, suggested: 6 illustrations
+
+Range: 1-9 images
+- Short article (<1000 words): 1-3 images
+- Medium article (1000-3000 words): 4-6 images
+- Long article (>3000 words): 7-9 images
+
+Reply with a number. Press Enter for recommended value.
+```
+
+- Confirm user selection
+- Default: 4-8 images for medium-length articles
+- Short articles: 1-3 images
+- Long articles: maximum 9 images
+- User says "default" / "standard" / "no preference" → Use recommended value
+
+### Step 4: Style Selection
+**Before digesting content, the user MUST select a Visual Style.**
+
+Present the style menu:
+```
+Please select a Visual Style (enter number or style name):
 
 [0] Base Sketch — White canvas, black hand-drawn lines, absurd clarity (default)
 [1] Retro-Tech — Yellowed engineering manual, mechanical drafting aesthetic
@@ -73,14 +131,14 @@ Please select a Visual Dialect (enter number or dialect name):
 [8] Clay Stop-Motion — 3D clay texture, hand-sculpted, rounded and charming
 [9] Glitch Art — Digital corruption, stripe displacement, data decay aesthetics
 
-Reply with a number (e.g., "3") or dialect name.
+Reply with a number (e.g., "3") or style name.
 ```
 
 - Confirm user selection
-- Inject corresponding dialect declaration into all subsequent prompts
+- Inject corresponding style declaration into all subsequent prompts
 - User says "default" / "base" / "no preference" → Use [0] Base Sketch
 
-### Step 3: Content Digestion
+### Step 5: Content Digestion
 Read the user's article text, links, Markdown, Notion, or screenshots. Extract:
 - What is the core argument?
 - Which paragraphs carry cognitive turning points?
@@ -89,7 +147,7 @@ Read the user's article text, links, Markdown, Notion, or screenshots. Extract:
 
 Do not distribute images evenly. Prioritize "cognitive anchors": core judgments, breakpoints, closed loops, divergences, before/after contrasts, continuation paths, character state changes.
 
-### Step 4: Visual Script (Shot List)
+### Step 6: Visual Script (Shot List)
 If the user says "analyze illustration strategy," output a Visual Script first. For each image, specify:
 - Placement: after which paragraph
 - Theme: what the image is about
@@ -99,7 +157,7 @@ If the user says "analyze illustration strategy," output a Visual Script first. 
 - Suggested elements
 - Suggested Chinese annotation keywords
 
-Default: 4-8 images. Short articles: 1-3 images. Long articles: maximum 9 images.
+Quantity must match the user-confirmed number from Step 3.
 
 **Context Anchor Mode Additional Step:**
 Before outputting the Visual Script, **MUST confirm character design direction with the user**:
@@ -110,7 +168,7 @@ Before outputting the Visual Script, **MUST confirm character design direction w
 
 **Prohibited**: Generating characters and images without user confirmation
 
-### Step 5: Single Image Generation
+### Step 7: Single Image Generation
 If the user explicitly requests "generate," do not stop for confirmation; generate each image individually.
 
 **Brand Anchor Mode Generation Parameters:**
@@ -119,7 +177,8 @@ If the user explicitly requests "generate," do not stop for confirmation; genera
 - Reference image: Pass character image from assets/ip-reference/
 - Reference strength: 0.6-0.8 (high consistency, preserving creative space)
 - Character must perform the core conceptual action in every image
-- Dialect declaration: Inject user-selected dialect (see dialect-atlas.md)
+- Style declaration: Inject user-selected style (see dialect-atlas.md)
+- Aspect ratio: Inject user-selected ratio (see base-genome.md)
 ```
 
 **Context Anchor Mode Generation Parameters:**
@@ -129,20 +188,22 @@ If the user explicitly requests "generate," do not stop for confirmation; genera
 - All illustrations in one article MUST use the same character; character appearance must be consistent
 - Character actions and poses may vary per image, but core appearance, material, and signature features must remain consistent
 - Encourage cross-domain synthesis and cognitive displacement metaphors
-- Dialect declaration: Inject user-selected dialect (see dialect-atlas.md)
+- Style declaration: Inject user-selected style (see dialect-atlas.md)
+- Aspect ratio: Inject user-selected ratio (see base-genome.md)
 ```
 
 Every image prompt must include:
-- 16:9 horizontal Chinese article illustration
-- Dialect declaration (from dialect-atlas.md)
-- Black hand-drawn lines (Base Sketch) or corresponding dialect line definition
-- Sparse red/orange/blue Chinese handwritten annotations (adjusted per dialect)
-- Generous negative space (adjusted per dialect)
+- Aspect ratio declaration (from base-genome.md)
+- Style declaration (from dialect-atlas.md)
+- Black hand-drawn lines (Base Sketch) or corresponding style line definition
+- Sparse red/orange/blue Chinese handwritten annotations (adjusted per style)
+- Generous negative space (adjusted per style and aspect ratio)
 - Character as the core action subject
 - Prohibition: PPT, commercial illustration, childish/cute, complex architecture, top-left corner type titles
 
-### Step 6: Quality Gates
+### Step 8: Quality Gates
 After generation, check against `references/quality-gates.md`. Common issues:
+- Aspect ratio consistency: All images use the same ratio as selected in Step 2
 - Character is merely decorative (not performing core action)
 - Image too crowded
 - Too much like a flowchart/PPT
@@ -152,7 +213,7 @@ After generation, check against `references/quality-gates.md`. Common issues:
 - Background not clean white (for Base Sketch)
 - **Brand Anchor Mode extra check**: Does character match reference image? Do signature features appear?
 
-### Step 7: Save & Deliver
+### Step 9: Save & Deliver
 Save final images to:
 ```text
 assets/<article-slug>-illustrations/
@@ -165,5 +226,5 @@ Name sequentially:
 
 ## Output Style
 Before generation: Visual Script should be short and precise.
-After generation: Report number of images generated, each image's purpose, save path, which images are most stable / optional.
+After generation: Report number of images generated, each image's purpose, save path, aspect ratio used, which images are most stable / optional.
 Do not write lengthy style theory explanations; let the images speak for themselves.

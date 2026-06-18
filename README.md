@@ -1,7 +1,7 @@
 <h1 align="center">Article Image Generator</h1>
 
 <p align="center">
-  <strong>AI-Powered Visual Storytelling for Written Content — Turn Articles into Compelling 16:9 Illustrations</strong>
+  <strong>AI-Powered Visual Storytelling for Written Content — Turn Articles into Compelling Illustrations with Configurable Aspect Ratios & Quantity</strong>
 </p>
 
 <p align="center">
@@ -9,7 +9,7 @@
   <a href="#installation">Installation</a> •
   <a href="#quickstart">Quick Start</a> •
   <a href="#workflow">Workflow</a> •
-  <a href="#visual-dialects">Visual Dialects</a> •
+  <a href="#visual-styles">Visual Styles</a> •
   <a href="#concepts">Concepts</a>
 </p>
 
@@ -23,9 +23,9 @@
 
 ## Overview
 
-**Article Image Generator** is an AI skill designed for Codex, Trae, and Claude Code that transforms written content into visually striking 16:9 horizontal illustrations. Unlike generic AI art tools or stock photo searches, it understands the narrative structure of your articles and generates images that serve as genuine visual extensions of your ideas — not mere decorations.
+**Article Image Generator** is an AI skill designed for Codex, Trae, and Claude Code that transforms written content into visually striking illustrations. Unlike generic AI art tools or stock photo searches, it understands the narrative structure of your articles and generates images that serve as genuine visual extensions of your ideas — not mere decorations.
 
-Built around two distinct **Character Anchor Modes** and ten **Visual Dialects**, this skill adapts its creative output to match your content's tone, subject matter, and audience expectations.
+Built around two distinct **Character Anchor Modes**, ten **Visual Styles**, and configurable **Aspect Ratios** (16:9, 9:16, 4:3, 3:4, 1:1, 21:9) and **Quantity** (1-9 images), this skill adapts its creative output to match your content's platform, tone, subject matter, and audience expectations.
 
 > "An illustration should not illustrate — it should extend."
 
@@ -52,11 +52,38 @@ Choose between brand consistency and content-native creativity:
 
 ---
 
-### Ten Visual Dialects
+### Configurable Aspect Ratios & Quantity
 
-Before generating, the skill prompts you to select a visual dialect — a complete aesthetic system that transforms the base visual DNA:
+Before generating, the skill guides you through two quick configuration steps:
 
-| ID | Dialect | Visual Signature | Best For |
+**Aspect Ratio Selection** — Choose the canvas shape that matches your target platform:
+
+| Ratio | Orientation | Best For |
+|:---:|:---:|:---|
+| **16:9** | Horizontal | Article body, blog posts, video covers (default) |
+| **9:16** | Vertical | Xiaohongshu, Douyin, phone wallpapers, short videos |
+| **4:3** | Horizontal | PPT, course slides, reports, presentations |
+| **3:4** | Vertical | Xiaohongshu graphics, Instagram, social media |
+| **1:1** | Square | Avatars, social media, product shots, square posters |
+| **21:9** | Ultra-wide | Banners, website covers, Bilibili headers, widescreen |
+
+The skill provides smart recommendations based on your content type, but you can override with any ratio.
+
+**Quantity Selection** — Choose how many illustrations to generate (1-9):
+
+| Article Length | Recommended Quantity |
+|:---|:---:|
+| Short (< 1000 words) | 1-3 images |
+| Medium (1000-3000 words) | 4-6 images |
+| Long (> 3000 words) | 7-9 images |
+
+---
+
+### Ten Visual Styles
+
+Before generating, the skill prompts you to select a visual style — a complete aesthetic system that transforms the base visual DNA:
+
+| ID | Style | Visual Signature | Best For |
 |:---:|:---|:---|:---|
 | 0 | **Base Sketch** | White canvas, black hand-drawn lines, absurd clarity | Default — tech, business, general |
 | 1 | **Retro-Tech** | Yellowed engineering manual, mechanical drafting aesthetic | History, industry, nostalgia |
@@ -227,18 +254,25 @@ Use Brand Anchor mode for this article.    ← Uses assets/ip-reference/ referen
 Use Context Anchor mode for this article.  ← Generates a custom character
 ```
 
-### Specify Dialect
+### Specify Aspect Ratio & Quantity
 
 ```
-Use Cyber-Neon dialect for this article.   ← Direct dialect selection
-Use Article Image Generator with Ink-Wash Zen style.  ← By dialect name
+Use 9:16 aspect ratio, 6 images.           ← Direct ratio + quantity
+Use Article Image Generator with 4:3, 3 images.  ← Ratio + quantity
+```
+
+### Specify Style
+
+```
+Use Cyber-Neon style for this article.     ← Direct style selection
+Use Article Image Generator with Ink-Wash Zen style.  ← By style name
 ```
 
 ### Complete Example
 
 ```
-Use Article Image Generator, Context Anchor mode, Cyber-Neon dialect,
-to generate 6 illustrations for:
+Use Article Image Generator, Context Anchor mode, 9:16 aspect ratio, 6 images, Cyber-Neon style,
+to generate illustrations for:
 
 [article text...]
 ```
@@ -247,9 +281,9 @@ to generate 6 illustrations for:
 
 ## Visual Genome
 
-The foundational DNA shared across all dialects:
+The foundational DNA shared across all styles:
 
-- **16:9 horizontal** format for article embedding
+- **Configurable aspect ratio** — 16:9 (default), 9:16, 4:3, 3:4, 1:1, or 21:9
 - **Pure white canvas**: No beige, warm gray, paper texture, gradients, or shadows
 - **Black hand-drawn lines**: Fine, slightly wobbly, non-mechanical, non-vector
 - **Generous negative space**: Subject occupies 40-60% of canvas; at least 35% blank
@@ -346,10 +380,16 @@ A: GPT Image 2 typically 5-15 seconds per image; 4K resolution may take 20-30 se
 
 ## Changelog
 
+### v1.1 (2026-06-18)
+- Configurable aspect ratios: 16:9, 9:16, 4:3, 3:4, 1:1, 21:9
+- Configurable quantity: 1-9 images per article with smart recommendations
+- Updated workflow: 9 steps with aspect ratio and quantity selection
+- Enhanced Visual Genome with multi-ratio specifications
+
 ### v1.0 (2026-06-18)
 - Initial release
 - Dual Character Anchor Modes (Brand + Context)
-- 10 Visual Dialects
+- 10 Visual Styles
 - Four Concept Forge methodologies
 - 8-step standardized workflow
 - User confirmation flow
