@@ -47,6 +47,15 @@ Full 9-step pipeline with granular control. Activated when user says:
 - "Expert mode" / "专业模式"
 - "I want full control" / "我要完整控制"
 - Or when user explicitly selects parameters one by one
+- **First-time users**: Automatically enters Guided Expert Mode (see below)
+
+### First-Time User Onboarding
+When `assets/session-history.json` does NOT exist, the skill automatically enters **Guided Expert Mode** — a step-by-step walkthrough that explains each parameter before proceeding. See `references/onboarding-guide.md` for the complete guided flow.
+
+Skip commands:
+- "skip guide" / "跳过引导" → Enter normal Expert Mode
+- "don't show this again" / "不再显示" → Create history file, never show guide again
+- "quick mode" / "快速模式" → Enter Quick Mode immediately
 
 ## Dual Anchor System
 
@@ -108,6 +117,8 @@ Read on-demand based on task requirements; do not load everything at once:
 - `references/session-history.md`: Session history format, reuse commands, user defaults
 - `references/illustration-strategy-report.md`: Strategy report structure and cognitive analysis framework
 - `references/series-character-continuity.md`: Series character save/reuse workflow
+- `references/onboarding-guide.md`: First-time user guided walkthrough
+- `references/error-handling.md`: Error scenarios and recovery strategies
 
 ### Mode-Specific References
 - **Brand Anchor Mode**: `references/character-anchors/brand-anchor.md` — Character locking specification, reference image usage rules, character description template
@@ -219,6 +230,8 @@ Reply with a number (e.g., "3") or style name.
 - Confirm user selection
 - Inject corresponding style declaration into all subsequent prompts
 - User says "default" / "base" / "no preference" → Use [0] Base Sketch
+
+**Style Preview**: Preview images for each style are available in `assets/style-previews/`. When the user asks "show me the styles" / "看看风格效果", display or describe the preview images to help them choose.
 
 ### Step 5b: Hybrid Style Mixing (Expert Mode Optional)
 If user selects [H] Hybrid Mode:

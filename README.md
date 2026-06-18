@@ -237,6 +237,51 @@ This turns image generation into a teachable content design process.
 
 ---
 
+### First-Time User Onboarding
+
+New users are automatically guided through a **step-by-step walkthrough** on first use:
+
+1. **Welcome**: Friendly introduction with option to skip
+2. **Mode Explanation**: Visual comparison of Brand Anchor vs Context Anchor with use cases
+3. **Language Selection**: Clear explanation of each language option
+4. **Aspect Ratio Guide**: Visual shape previews with platform recommendations
+5. **Quantity Guide**: Word count → image count mapping with cognitive purpose
+6. **Style Gallery**: Each style with emoji icon, description, and best-for guidance
+7. **Content Input**: Clear instructions on supported formats
+8. **Strategy Report Offer**: Optional pre-generation analysis
+9. **Character Selection**: Guided character concept comparison
+10. **Completion**: Summary with tips for next time
+
+Skip commands: "skip guide" / "don't show this again" / "quick mode"
+
+---
+
+### Error Handling
+
+The skill provides clear guidance for common issues:
+
+| Scenario | Recovery |
+|----------|----------|
+| Reference image not found | Prompt upload or switch to Context Anchor |
+| Reference image too small/blurry | Explain requirements, offer alternatives |
+| Reference image has multiple characters | Ask which to use, offer crop |
+| Article too short (<500 words) | Suggest 1 hero image or provide more content |
+| Article too long (>5000 words) | Recommend section-based generation |
+| Character inconsistency | Strengthen keywords, simplify design |
+| Wrong annotation language | Re-generate with explicit declaration |
+| Style not applied correctly | Re-generate with stronger injection |
+| Generation failed (rate limit) | Wait 30s and retry, reduce count |
+
+All errors include: explanation of what went wrong, why, and 2-3 actionable options.
+
+---
+
+### Style Preview Gallery
+
+Preview images for all 10 styles are available in `assets/style-previews/`. Say "show me the styles" to browse before choosing.
+
+---
+
 ### Professional Workflow: 8-Step Standardized Pipeline
 
 ```
@@ -476,6 +521,9 @@ This skill leverages session context mechanisms, combined with frozen character 
 | `references/session-history.md` | Session history format and reuse commands |
 | `references/illustration-strategy-report.md` | Strategy report structure and cognitive analysis framework |
 | `references/series-character-continuity.md` | Series character save/reuse workflow |
+| `references/onboarding-guide.md` | First-time user guided walkthrough |
+| `references/error-handling.md` | Error scenarios and recovery strategies |
+| `assets/style-previews/` | 10 Visual Style preview images |
 
 ---
 
@@ -504,6 +552,13 @@ A: GPT Image 2 typically 5-15 seconds per image; 4K resolution may take 20-30 se
 ---
 
 ## Changelog
+
+### v1.3 (2026-06-18)
+
+- First-time user onboarding: Guided Expert Mode with step-by-step walkthrough
+- Error handling: 15+ error scenarios with clear recovery strategies
+- Style preview gallery: 10 preview images in `assets/style-previews/`
+- Style browsing: "show me the styles" command to preview before selection
 
 ### v1.2 (2026-06-18)
 
