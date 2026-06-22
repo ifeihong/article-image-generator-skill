@@ -33,22 +33,24 @@ Built around two distinct **Character Anchor Modes**, ten **Visual Styles**, and
 
 ## Features
 
-### Dual Character Anchor Modes
+### Triple Anchor Modes
 
-Choose between brand consistency and content-native creativity:
+Choose the right visual approach for your content:
 
-| Aspect | Brand Anchor Mode | Context Anchor Mode |
-|--------|------------------|---------------------|
-| **Core Logic** | Upload a character reference; all illustrations use the same figure | Generate a unique character tailored to each article's theme |
-| **Best For** | Brand content, series articles, personal IPs, corporate blogs | Deep-dive articles, creative experiments, trending topics |
-| **Character Consistency** | Maximum (same figure across all content) | High (same figure within one article) |
-| **Brand Recognition** | Strong (visual signature) | Subtle (content-first approach) |
-| **Creative Freedom** | Constrained by existing character | Unbounded, maximizes creative potential |
-| **User Action** | Upload reference image → auto-reuse | Confirm character concept → proceed |
+| Aspect | Brand Anchor Mode | Context Anchor Mode | No-Character Mode |
+|--------|------------------|---------------------|-------------------|
+| **Core Logic** | Upload a character reference; all illustrations use the same figure | Generate a unique character tailored to each article's theme | No character at all — pure concept through abstract elements, objects, or scenes |
+| **Best For** | Brand content, series articles, personal IPs, corporate blogs | Deep-dive articles, creative experiments, trending topics | Data analysis, methodology, concept explanation, atmosphere pieces |
+| **Character Consistency** | Maximum (same figure across all content) | High (same figure within one article) | N/A (no character) |
+| **Brand Recognition** | Strong (visual signature) | Subtle (content-first approach) | None (pure concept) |
+| **Creative Freedom** | Constrained by existing character | Unbounded, maximizes creative potential | Maximum (no character constraints) |
+| **User Action** | Upload reference image → auto-reuse | Confirm character concept → proceed | Select visual direction → proceed |
 
-**Brand Anchor Mode** is ideal for content creators building a visual identity. Upload a character turnaround sheet once, and every article features your recognizable figure — readers see your character and know it's your content.
+**Brand Anchor Mode** is ideal for content creators building a visual identity. Upload a character turnaround sheet once, and every article features your recognizable figure.
 
-**Context Anchor Mode** is for when the content itself demands a bespoke visual voice. Writing about quantum computing? Your character might be a "Probability Ghost" — a translucent figure made of floating equations. The character exists only for this article, making it inseparable from the content.
+**Context Anchor Mode** is for when the content itself demands a bespoke visual voice. The character exists only for this article, making it inseparable from the content.
+
+**No-Character Mode** is for when you want the concept itself to be the visual. No faces, no figures, no IP — just pure visual metaphors, object relationships, or atmospheric scenes that speak directly to the idea.
 
 ---
 
@@ -252,7 +254,7 @@ This turns image generation into a teachable content design process.
 New users are automatically guided through a **step-by-step walkthrough** on first use:
 
 1. **Welcome**: Friendly introduction with option to skip
-2. **Mode Explanation**: Visual comparison of Brand Anchor vs Context Anchor with use cases
+2. **Mode Explanation**: Visual comparison of Brand Anchor vs Context Anchor vs No-Character with use cases
 3. **Language Selection**: Clear explanation of each language option
 4. **Aspect Ratio Guide**: Visual shape previews with platform recommendations
 5. **Quantity Guide**: Word count → image count mapping with cognitive purpose

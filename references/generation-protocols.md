@@ -79,6 +79,31 @@ Make {角色名称} strange but clean, interesting but not childish.
 
 ---
 
+## 无角色模式专用模板
+
+在通用基础前增加：
+
+```text
+No character in this illustration. The image conveys the concept purely through abstract elements, object relationships, or scene atmosphere.
+
+Visual direction: {纯概念隐喻 / 物体叙事 / 场景氛围}
+Concept expression method: {概念拆解法 / 视觉对比法 / 空间隐喻法}
+
+Core visual metaphor:
+{用 2-3 句话描述画面的核心视觉隐喻：什么元素代表什么概念，它们之间的关系是什么}
+
+Visual focus:
+{画面的视觉焦点是什么：一个形状、一个对比、一个空间关系、一个光影效果}
+
+Atmosphere:
+{画面氛围：冷峻/温暖/紧张/希望/神秘/秩序/混乱}
+
+No human-like figures. No faces. No anthropomorphized objects with expressions or poses.
+The concept must be readable from the image alone, without relying on text or character action.
+```
+
+---
+
 ## 风格变体声明（可选）
 
 在通用基础中插入：

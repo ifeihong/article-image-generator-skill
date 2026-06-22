@@ -34,9 +34,9 @@ Let's get started! ↓
 ### Step 1: Mode Selection (Explained)
 
 ```
-━━━ Step 1: Choose Your Character Mode ━━━
+━━━ Step 1: Choose Your Visual Mode ━━━
 
-There are two ways to use characters in your illustrations:
+There are three ways to create illustrations:
 
 🧑‍🎨 Brand Anchor Mode
    Upload a character reference image (like a turnaround sheet).
@@ -48,9 +48,14 @@ There are two ways to use characters in your illustrations:
    All illustrations in one article use the SAME character.
    Best for: One-off articles, varied topics, maximum creativity.
 
-💡 Tip: You can switch modes anytime. Start with Context Anchor 
-   to explore, then switch to Brand Anchor once you find a 
-   character you love.
+🌌 No-Character Mode
+   No character at all — pure concept through abstract elements,
+   object relationships, or atmospheric scenes.
+   Best for: Data analysis, methodology, concept explanation,
+   or when you want the idea itself to be the visual.
+
+💡 Tip: You can switch modes anytime. Start with Context Anchor
+   to explore, then try No-Character for concept-heavy content.
 
 Which mode would you like? (Press Enter for Context Anchor)
 ```

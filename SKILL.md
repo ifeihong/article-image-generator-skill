@@ -66,12 +66,14 @@ Skip commands:
 | User explicitly says "use my character" / "brand mode" / "fixed character" | Brand Anchor Mode |
 | Character reference image exists in `assets/ip-reference/` | Default to Brand Anchor Mode |
 | User says "context mode" / "custom character" / "free form" / "max creativity" | Context Anchor Mode |
+| User says "no character" / "pure concept" / "abstract only" / "no IP" / "无角色" / "纯画面" | No-Character Mode |
 | No reference image and user unspecified | Context Anchor Mode (default) |
 | User says "use my series character [name]" | Series Character Mode (see below) |
 
 ### Mode Switching Commands
 - "Switch to Brand Anchor mode" → Check `assets/ip-reference/` for reference image; switch if exists, prompt for upload if not
 - "Switch to Context Anchor mode" → Switch directly
+- "Switch to No-Character mode" / "Use pure concept mode" → Switch directly
 - "Use Brand Anchor this time, Context Anchor next time" → Execute as single-task override without changing default
 - "Use my [series name] character" → Load series character from `session-history.json`
 
@@ -124,6 +126,7 @@ Read on-demand based on task requirements; do not load everything at once:
 ### Mode-Specific References
 - **Brand Anchor Mode**: `references/character-anchors/brand-anchor.md` — Character locking specification, reference image usage rules, character description template
 - **Context Anchor Mode**: `references/character-anchors/context-anchor.md` — Character generation rules, type library, design methodologies, mandatory user confirmation workflow
+- **No-Character Mode**: `references/character-anchors/no-character.md` — Pure concept generation without any character/IP, three visual directions (abstract metaphor / object narrative / scene atmosphere), concept expression methods
 
 ## Workflow
 
@@ -135,6 +138,7 @@ If user says "expert mode" / "full control", switch to Expert Mode.
 Determine which mode to use:
 - Check if image files exist in `assets/ip-reference/`
 - Check if user requests a series character (`session-history.json`)
+- Check if user requests No-Character mode ("no character" / "pure concept" / "无角色")
 - Ask user preference if not explicitly stated
 - Read the corresponding mode reference document after confirmation
 
