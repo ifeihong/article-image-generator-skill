@@ -86,6 +86,8 @@ Make {角色名称} strange but clean, interesting but not childish.
 ```text
 No character in this illustration. The image conveys the concept purely through abstract elements, object relationships, or scene atmosphere.
 
+CRITICAL: This is image {current}/{total} of the article. ALL images in this article use the SAME style: {已选定的风格名称} (locked in Step 5). Do NOT change style mid-task.
+
 Visual direction: {纯概念隐喻 / 物体叙事 / 场景氛围}
 Concept expression method: {概念拆解法 / 视觉对比法 / 空间隐喻法}
 
@@ -97,6 +99,11 @@ Visual focus:
 
 Atmosphere:
 {画面氛围：冷峻/温暖/紧张/希望/神秘/秩序/混乱}
+
+Style consistency reminder:
+- Use the SAME color palette, line style, and overall aesthetic as the previous images
+- Only the content/concept changes; the visual language stays identical
+- Reference the style declaration injected in Step 5
 
 No human-like figures. No faces. No anthropomorphized objects with expressions or poses.
 The concept must be readable from the image alone, without relying on text or character action.

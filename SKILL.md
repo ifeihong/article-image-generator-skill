@@ -233,7 +233,9 @@ Reply with a number (e.g., "3") or style name.
 ```
 
 - Confirm user selection
-- Inject corresponding style declaration into all subsequent prompts
+- **Lock the selected style for ALL images in this article** (same as aspect ratio locking)
+- Inject corresponding style declaration into ALL subsequent prompts
+- **Critical for No-Character Mode**: Style is the ONLY visual consistency mechanism — without a locked style, images will look like random stock photos
 - User says "default" / "base" / "no preference" → Use [0] Base Sketch
 
 **Style Preview**: Preview images for each style are available in `assets/style-previews/`. When the user asks "show me the styles" / "看看风格效果", display or describe the preview images to help them choose.

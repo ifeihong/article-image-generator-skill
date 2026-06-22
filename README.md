@@ -50,7 +50,7 @@ Choose the right visual approach for your content:
 
 **Context Anchor Mode** is for when the content itself demands a bespoke visual voice. The character exists only for this article, making it inseparable from the content.
 
-**No-Character Mode** is for when you want the concept itself to be the visual. No faces, no figures, no IP — just pure visual metaphors, object relationships, or atmospheric scenes that speak directly to the idea.
+**No-Character Mode** is for when you want the concept itself to be the visual. No faces, no figures, no IP — just pure visual metaphors, object relationships, or atmospheric scenes that speak directly to the idea. All images in the article still share the **same locked visual style** (chosen in Step 5), ensuring the set feels cohesive even without a recurring character.
 
 ---
 
